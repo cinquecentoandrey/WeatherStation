@@ -17,16 +17,15 @@ void setup() {
   pinMode(13, OUTPUT);
   pinMode(soundPin, OUTPUT);
   Serial.setTimeout(5);
-  if (!bme.begin(0x76)) 
-    {
+  if (!bme.begin(0x76)) {
       Serial.println("Could not find a valid BME280 sensor, check wiring!");
       while (1);
     }
 }
 
-void loop(){
+void loop() {
   static uint32_t tmr = 0;
-  if (millis() - tmr > 100){
+  if (millis() - tmr > 100) {
     tmr = millis();
     Serial.print(TEMP);
     Serial.print(',');
